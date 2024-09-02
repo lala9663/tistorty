@@ -5,9 +5,9 @@ import Parser from "rss-parser";
  * README.MD
  */
  
-let text = `# Hi there 👋
+let text = `# TiStory ✍🏼
 
-## 이런 환경에 익숙해요✍🏼
+## 블로그 꾸준히 작성하기
 
 ## 📕 Latest Blog Posts
 
@@ -20,12 +20,13 @@ const parser = new Parser({
     }});
 
 (async () => {
-
-/*    // 피드 목록
+   // 피드 목록
     const feed = await parser.parseURL('https://lala9663.tistory.com/rss');
 
-    // 최신 5개의 글의 제목과 링크를 가져온 후 text에 추가
-    for (let i = 0; i < 5; i++) {
+
+ // 최신 5개의 글의 제목과 링크를 가져온 후 text에 추가
+/* 
+ for (let i = 0; i < 5; i++) {
         const {title, link} = feed.items[i];
         console.log(`${i + 1}번째 게시물`);
         console.log(`추가될 제목: ${title}`);
