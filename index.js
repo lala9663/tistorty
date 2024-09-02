@@ -21,7 +21,7 @@ const parser = new Parser({
 
 (async () => {
 
-    // 피드 목록
+/*    // 피드 목록
     const feed = await parser.parseURL('https://lala9663.tistory.com/rss');
 
     // 최신 5개의 글의 제목과 링크를 가져온 후 text에 추가
@@ -32,6 +32,20 @@ const parser = new Parser({
         console.log(`추가될 링크: ${link}`);
         text += `<a href=${link}>${title}</a></br>`;
     }
+*/
+
+text += "<ul>";
+
+for (let i = 0; i < 5; i++) {
+    const { title, link } = feed.items[i];
+    console.log(`${i + 1}번째 게시물`);
+    console.log(`추가될 제목: ${title}`);
+    console.log(`추가될 링크: ${link}`);
+    text += `<li><a href="${link}">${title}</a></li>`;
+}
+
+text += "</ul>";
+
 
     // README.md 파일 작성
     writeFileSync('README.md', text, 'utf8', (e) => {
